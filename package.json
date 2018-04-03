@@ -1,0 +1,8 @@
+{
+  "name": "dota-button-bot",
+  "version": "1.0.0",
+  "description": "Reacts to mentions of dota",
+  "main": "bot.js",
+  "author": "Elliot Cheung",
+  "dependencies": {}
+}
