@@ -17,13 +17,12 @@ client.on("message", (message) => {
   if(message.author.id==430871108716199948 || !message.guild) return;
 
   if (message.content === "!!button") {
-  	message.channel.send("Hitting the button");
     if (message.member.voiceChannel) {
       message.member.voiceChannel.join()
         .then(connection => {
           const dispatcher = connection.playFile('./buzzer.mp3');
         })
-        .catch();
+        .catch((err) => {message.channel.send("Whoops, couldn't join the voice channel for some reason")});
     } else {
       message.reply("No hitting the button unless you're in a voice channel");
     }
@@ -31,7 +30,7 @@ client.on("message", (message) => {
 
   else if (message.content.toLowerCase().includes("dota")) {
   	let user=message.author.username;
-  	let str = `Test BZZZZZZZZ! ${user} mentioned DOTA!`;
+  	let str = `BZZZZZZZZ! ${user} mentioned DOTA!`;
   	db.ref(`offenses/${message.guild.id}/${message.channel.name}/${user}`).once('value').then((response) => {
   		response = response.val();
   		let numOffenses = response.numOffenses;
