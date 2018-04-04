@@ -31,7 +31,7 @@ client.on("message", (message) => {
 
   else if (message.content.toLowerCase().includes("dota")) {
   	let user=message.author.username;
-  	let str = `BZZZZZZZZ! ${user} mentioned DOTA!`;
+  	let str = `Test BZZZZZZZZ! ${user} mentioned DOTA!`;
   	db.ref(`offenses/${message.guild.id}/${message.channel.name}/${user}`).once('value').then((response) => {
   		response = response.val();
   		let numOffenses = response.numOffenses;
