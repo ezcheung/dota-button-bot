@@ -28,7 +28,7 @@ client.on("message", (message) => {
     }
   }
 
-  else if (message.content.toLowerCase().includes("dota")) {
+  else if (message.content.toLowerCase().includes("dota") || message.content.toLowerCase().includes("defense of the ancients")) {
   	let user=message.author.username;
   	let str = `BZZZZZZZZ! ${user} mentioned DOTA!`;
   	db.ref(`offenses/${message.guild.id}/${message.channel.name}/${user}`).once('value').then((response) => {
