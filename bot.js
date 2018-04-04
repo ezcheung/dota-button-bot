@@ -41,6 +41,11 @@ client.on("message", (message) => {
     	message.channel.send(str);
   		db.ref(`offenses/${message.guild.id}/${message.channel.name}/${user}`).set({numOffenses: numOffenses});
   	})
+  	.catch((err) => {
+  		db.ref(`offenses/${message.guild.id}/${message.channel.name}/${user}`).set({numOffenses: 1});
+  		str += "\n" + `${message.author.username} has committed this offense in this channel 1 time`;
+  		message.channel.send(str);
+  	})
   }
 });
 
