@@ -12,15 +12,24 @@ firebase.initializeApp({
 const db = firebase.database();
 
 client.on("ready", () => {
-  console.log("I am ready!");
 });
 
 client.on("message", (message) => {
-  console.log("Message received");
-  console.log("User: ", message.author.id);
-  if(message.author.id==430871108716199948) return;
+  if(message.author.id==430871108716199948 || !message.guild) return;
 
-  if (message.content.toLowerCase().includes("dota")) {
+  if (message.content === '!dotabutton') {
+    if (message.member.voiceChannel) {
+      message.member.voiceChannel.join()
+        .then(connection => {
+          const dispatcher = connection.playFile('./buzzer.mp3');
+        })
+        .catch();
+    } else {
+      message.reply("No hitting the button unless you're in a voice channel");
+    }
+  }
+
+  else if (message.content.toLowerCase().includes("dota")) {
   	let user=message.author.username;
   	let str = `BZZZZZZZZ! ${user} mentioned DOTA!`;
   	db.ref(`offenses/${message.guild.id}/${message.channel.name}/${user}`).once('value').then((response) => {
