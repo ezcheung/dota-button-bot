@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const auth = require("./auth");
 const firebase = require("firebase");
 const client = new Discord.Client();
 
@@ -45,4 +44,4 @@ client.on("message", (message) => {
   }
 });
 
-client.login(process.env.token);
+client.login(process.env.BOT_TOKEN);
