@@ -17,7 +17,7 @@ client.on("ready", () => {
 client.on("message", (message) => {
   if(message.author.id==430871108716199948 || !message.guild) return;
 
-  if (message.content === '!dotabutton') {
+  if (message.content === '!!button') {
     if (message.member.voiceChannel) {
       message.member.voiceChannel.join()
         .then(connection => {
