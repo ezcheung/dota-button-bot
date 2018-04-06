@@ -20,7 +20,7 @@ const responses = [
 	[
 		"Cool it with the DOTA references, alright ${USER}? That's ${TIMES} times now", 
 		"Haha, you're just messing with me right ${USER}? That's {TIMES} times now",
-		"Heeeeeeyyyyy, ${USER}, I thought I asked you kindly not to mention DOTA. Please respect my authority around here. I don't like to be the bad guy"
+		"Heeeeeeyyyyy, ${USER}, I thought I asked you kindly not to mention DOTA. Please respect my authority around here. I don't like to be the bad guy",
 		"Dude, cmon. ${TIMES} times? Not cool."
 	],
 	[
