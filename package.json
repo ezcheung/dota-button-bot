@@ -7,7 +7,9 @@
   "dependencies": {
     "discord.io": "^2.5.3",
     "discord.js": "^11.3.2",
-    "firebase": "^4.12.1"
+    "ffmpeg-binaries": "^3.2.2-3",
+    "firebase": "^4.12.1",
+    "opusscript": "0.0.6"
   },
   "scripts": {
     "start": "node bot.js"
