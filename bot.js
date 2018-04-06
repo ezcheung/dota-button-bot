@@ -47,7 +47,7 @@ client.on("message", (message) => {
         .then(connection => {
           const dispatcher = connection.playFile('./buzzer.mp3');
         })
-        .catch((err) => {message.channel.send("Whoops, couldn't join the voice channel for some reason: ", err)});
+        .catch((err) => {message.channel.send("Whoops, couldn't join the voice channel for some reason: " + err)});
     } else {
       message.reply("No hitting the button unless you're in a voice channel");
     }
