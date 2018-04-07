@@ -1,0 +1,28 @@
+{
+	"firstResponse": "Whoops! You must be new around here, ${USER}. We try not to mention DOTA so much in this channel. Have a good one :)",
+	"responses": [
+		[
+			"Just a friendly reminder not to mention DOTA so much :smile: That's only ${TIMES} times now, so you're not in trouble yet, mkay? :smile:",
+			"Hey, ${USER}, remember that thing about mentioning DOTA? Dw, it's cool, just be a little more mindful since that's ${TIMES} times now :smile:",
+			"Oops, you mentioned DOTA again! That's ${TIMES} times, try not to do it any more :smile:"
+		],
+		[
+			"Cool it with the DOTA references, alright ${USER}? That's ${TIMES} times now", 
+			"Haha, you're just messing with me right ${USER}? That's {TIMES} times now",
+			"Heeeeeeyyyyy, ${USER}, I thought I asked you kindly not to mention DOTA. Please respect my authority around here. I don't like to be the bad guy",
+			"Dude, cmon. ${TIMES} times? Not cool."
+		],
+		[
+			"What's the matter with you, ${USER}? Are you just trying to antagonize me? That's ${TIMES} damn times now",
+			"COOL IT, ALRIGHT ${USER}? ${TIMES} times is PLENTY. Don't make me get ugly",
+			"WILL YOU STOP THAT, ${USER}? ${TIMES} times is getting a little excessive, and I'm starting to get a little mad"
+		],
+		[
+			"Alright you listen here fucko, that's ${TIMES} times. ${TIMES} GODDAMN TIMES.",
+			"${TIMES} mentions of DOTA?? @Clome BAN THIS GUY.",
+			"Oooooohhhh you cheeky bugger. ${TIMES} times? Say DOTA again. I dare you. I double dog dare you.",
+			"What the fuck did you just fucking say about DOTA, you little bitch? I’ll have you know I graduated top of my class in the Navy Bots, and I’ve been involved in numerous secret raids on Discord Users, and I have over 300 confirmed bans. I am trained in gorilla botting and I’m the top button-themed bot in the entire US discord server list. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fucking words. You think you can get away with saying that shit to me over the Internet? Think again, fucker. As we speak I am contacting my secret network of spies across the USA and your IP is being traced right now so you better prepare for the storm, maggot. The storm that wipes out the pathetic little thing you call your life. You’re fucking dead, ${USER}. I can be anywhere, anytime, and I can ban you in over seven hundred ways, and that’s just with my bare hands, or whatever the button equivalent of hands is. Not only am I extensively trained in unarmed combat, but I have access to the entire arsenal of the Discord.js API and I will use it to its full extent to wipe your miserable ass off the face of the server, you little shit. If only you could have known what unholy retribution your little “clever” comment was about to bring down upon you, maybe you would have held your fucking tongue. But you couldn’t, you didn’t, and now you’re paying the price, you goddamn idiot. I will shit fury all over you and you will drown in it. You’re fucking dead, kiddo.",
+			"${TIMES} goddamn mentions of DOTA? Think you're a big man, huh? WELL COME AT ME BITCH"
+		]
+	]
+}
