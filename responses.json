@@ -4,10 +4,12 @@
 		[
 			"Just a friendly reminder not to mention DOTA so much :smile: That's only ${TIMES} times now, so you're not in trouble yet, mkay? :smile:",
 			"Hey, ${USER}, remember that thing about mentioning DOTA? Dw, it's cool, just be a little more mindful since that's ${TIMES} times now :smile:",
-			"Oops, you mentioned DOTA again! That's ${TIMES} times, try not to do it any more :smile:"
+			"Oops, you mentioned DOTA again! That's ${TIMES} times, try not to do it any more :smile:",
+			"Whoops, you must have forgotten about the DOTA rule we have around here. That's ${TIMES}, so please be more aware"
 		],
 		[
 			"Cool it with the DOTA references, alright ${USER}? That's ${TIMES} times now", 
+			"Haha nice, I get it, you're just messing around, ${USER}. That's ${TIMES} now, so I think the bit's run its course",
 			"Haha, you're just messing with me right ${USER}? That's ${TIMES} times now",
 			"Heeeeeeyyyyy, ${USER}, I thought I asked you kindly not to mention DOTA. Please respect my authority around here. I don't like to be the bad guy",
 			"Dude, cmon. ${TIMES} times? Not cool."
@@ -15,7 +17,8 @@
 		[
 			"What's the matter with you, ${USER}? Are you just trying to antagonize me? That's ${TIMES} damn times now",
 			"COOL IT, ALRIGHT ${USER}? ${TIMES} times is PLENTY. Don't make me get ugly",
-			"WILL YOU STOP THAT, ${USER}? ${TIMES} times is getting a little excessive, and I'm starting to get a little mad"
+			"WILL YOU STOP THAT, ${USER}? ${TIMES} times is getting a little excessive, and I'm starting to get a little mad",
+			"mmMM I know you didn't just mention DOTA again ${USER}. ${TIMES} is damn well past enough"
 		],
 		[
 			"Alright you listen here fucko, that's ${TIMES} times. ${TIMES} GODDAMN TIMES.",
