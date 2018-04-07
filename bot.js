@@ -44,8 +44,7 @@ client.on("message", (message) => {
   		db.ref(`offenses/${message.guild.id}/${message.channel.name}/${user}`).set({numOffenses: numOffenses});
   	})
   	.catch((err) => {
-  		db.ref(`offenses/${message.guild.id}/${message.channel.name}/${user}`).set({numOffenses: 1});
-  		str += "\n" + `${message.author.username} has committed this offense in this channel 1 time`;
+  		str += "\n" + "Something went wrong when I was thinking of a reply, but I'm very mad at you, " + message.author.username + ", regardless"
   		message.channel.send(str);
   	})
   }
@@ -55,10 +54,9 @@ function reprimand(offenses, user) {
 	let timesReplace = /\${TIMES}/g;
 	let userReplace = /\${USER}/g;
 
-	if(offenses <= 1) return responses.firstResponse;
+	if(offenses <= 1) return responses.firstResponse.replace(userReplace, user).replace(timesReplace, offenses);
 
-	offenses = offenses-1;
-	let index = Math.floor(offenses / 5);
+	let index = Math.floor((offenses-1) / 5);
 	index = Math.min(index, responses.responses.length);
 
 	let resp = randomElementFromArray(responses.responses[index]);
