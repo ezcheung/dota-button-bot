@@ -1,5 +1,5 @@
 {
-	"firstResponse": "Whoops! You must be new around here, ${USER}. We try not to mention DOTA so much in this channel. Have a good one :)",
+	"firstResponse": "Whoops, you said DOTA! You must be new around here, ${USER}. We try not to mention DOTA so much in this channel. Have a good one :)",
 	"responses": [
 		[
 			"Just a friendly reminder not to mention DOTA so much :smile: That's only ${TIMES} times now, so you're not in trouble yet, mkay? :smile:",
@@ -8,6 +8,7 @@
 			"Whoops, you must have forgotten about the DOTA rule we have around here. That's ${TIMES}, so please be more aware"
 		],
 		[
+			"Ahaha remember that time I said not to mention DOTA around here? Remember how funny that was? I have to admit though, it does bug me a liiiiittttle teeeensy iota of a bit that you've mentioned it ${TIMES} times now, ${USER}, so if maybe we could chill out with that, that'd be really great :smile:",
 			"Haha nice, I get it, you're just messing around, ${USER}. That's ${TIMES} now, so I think the bit's run its course",
 			"Haha, you're just messing with me right ${USER}? That's ${TIMES} times now",
 			"Very funny, another DOTA reference. What is that, ${TIMES} times now? I don't know, who's counting? Not this guy, I'm just a button programmed for this singular purpose. Seriously though, very funny ${USER}",
