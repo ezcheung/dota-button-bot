@@ -5,7 +5,8 @@
 			"Just a friendly reminder not to mention DOTA so much :smile: That's only ${TIMES} times now, so you're not in trouble yet, mkay? :smile:",
 			"Hey, ${USER}, remember that thing about mentioning DOTA? Dw, it's cool, just be a little more mindful since that's ${TIMES} times now :smile:",
 			"Oops, you mentioned DOTA again! That's ${TIMES} times, try not to do it any more :smile:",
-			"Whoops, you must have forgotten about the DOTA rule we have around here. That's ${TIMES}, so please be more aware"
+			"Whoops, you must have forgotten about the DOTA rule we have around here. That's ${TIMES}, so please be more aware",
+			"Oh you said DOTA again, you're in big trouble :stuck_out_tongue_winking_eye: Nahh but seriously, that's ${TIMES} now, so be a little more careful there, alright?"
 		],
 		[
 			"Ahaha remember that time I said not to mention DOTA around here? Remember how funny that was? I have to admit though, it does bug me a liiiiittttle teeeensy iota of a bit that you've mentioned it ${TIMES} times now, ${USER}, so if maybe we could chill out with that, that'd be really great :smile:",
