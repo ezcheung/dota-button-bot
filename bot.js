@@ -75,8 +75,10 @@ function replaceForDetection(str) {
 		'4': 'a',
 		'0': 'o',
 		'7': 't',
+		'3': 'e',
+		'α': 'a'
 	}
-	str = str.replace(/\s/g, '');
+	str = str.replace(/\W/g, '');
 	return allReplace(str, replaceObj);
 }
 
