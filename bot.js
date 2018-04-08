@@ -33,7 +33,7 @@ client.on("message", (message) => {
     }
   }
 
-  else if (message.content.toLowerCase().includes("dota") || message.content.toLowerCase().includes("defense of the ancients")) {
+  else if (replaceForDetection(message.content.toLowerCase()).includes("dota") || replaceForDetection(message.content.toLowerCase()).includes("defense of the ancients")) {
   	let user=message.author.username;
   	let str = `BZZZZZZZZ! ${user} mentioned DOTA!`;
   	db.ref(`offenses/${message.guild.id}/${message.channel.name}/${user}`).once('value').then((response) => {
@@ -41,7 +41,7 @@ client.on("message", (message) => {
   		if(!response) numOffenses = 0;
   		else numOffenses = response.numOffenses;
   		numOffenses += 1;
-  		str += "\n" + reprimand(numOffenses, message.author.username);
+  		str += "\n" + reprimand(numOffenses, message.author.usegitrname);
     	message.channel.send(str);
   		db.ref(`offenses/${message.guild.id}/${message.channel.name}/${user}`).set({numOffenses: numOffenses});
   	})
@@ -69,5 +69,23 @@ function reprimand(offenses, user) {
 function randomElementFromArray(arr) {
 	return arr[Math.floor(Math.random() * arr.length)];
 }
+
+function replaceForDetection(str) {
+	let replaceObj = {
+		'4': 'a',
+		'0': 'o',
+		'7': 't',
+	}
+	str = str.replace(/\s/g, '');
+	return allReplace(str, replaceObj);
+}
+
+function allReplace(str, obj) {
+    var retStr = str;
+    for (var x in obj) {
+        retStr = retStr.replace(new RegExp(x, 'g'), obj[x]);
+    }
+    return retStr;
+};
 
 client.login(process.env.BOT_TOKEN);
