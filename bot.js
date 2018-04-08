@@ -41,7 +41,7 @@ client.on("message", (message) => {
   		if(!response) numOffenses = 0;
   		else numOffenses = response.numOffenses;
   		numOffenses += 1;
-  		str += "\n" + reprimand(numOffenses, message.author.usegitrname);
+  		str += "\n" + reprimand(numOffenses, user);
     	message.channel.send(str);
   		db.ref(`offenses/${message.guild.id}/${message.channel.name}/${user}`).set({numOffenses: numOffenses});
   	})
