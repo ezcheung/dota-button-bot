@@ -43,7 +43,7 @@ client.on("message", (message) => {
 		}
 		message.channel.send("You reported " + username);
 		let offender = message.guild.members.find((user) => {
-			message.channel.send("User: " + user);
+			message.channel.send("User: " + user.username);
 			return user.username == username;
 		});
 		if(!offender) message.channel.send(`Couldn't find the offender ${username}. Check your spelling and/or formatting`);
