@@ -34,7 +34,7 @@ client.on("message", (message) => {
   }
 
   else if (message.content.startsWith("!!report")) {
-  	message.channel.send(message.author.id):
+  	message.channel.send(message.author.id)
 	if(message.author.id==210224301671055360 || message.author.id==210209958808125441) {
 		let msg = message.content;
 		let username = msg.substring(msg.indexOf(' '));
