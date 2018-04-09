@@ -42,9 +42,8 @@ client.on("message", (message) => {
 			return;
 		}
 		message.channel.send("You reported " + username);
-		let offender = message.guild.members.find((user) => {
-			message.channel.send("User: " + user.username);
-			return user.username == username;
+		let offender = message.guild.members.find((member) => {
+			return member.user.username == username;
 		});
 		if(!offender) message.channel.send(`Couldn't find the offender ${username}. Check your spelling and/or formatting`);
 		else if(!offender.id == 430871108716199948) message.channel.send("Haha, very funny. I would never do anything reportable though");
