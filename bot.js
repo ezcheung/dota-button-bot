@@ -41,22 +41,21 @@ client.on("message", (message) => {
 			message.channel.send("You gotta give me a username, man");
 			return;
 		}
-		message.channel.send("You reported " + username);
 		let offender = message.guild.members.find((member) => {
 			return member.user.username == username;
 		});
 		if(!offender) message.channel.send(`Couldn't find the offender ${username}. Check your spelling and/or formatting`);
-		else if(!offender.id == 430871108716199948) message.channel.send("Haha, very funny. I would never do anything reportable though");
+		else if(!offender.user.id == 430871108716199948) message.channel.send("Haha, very funny. I would never do anything reportable though");
 		else {
 			let str = `BZZZZZZZZ! ${username} mentioned DOTA!`;
-			db.ref(`offenses/${message.guild.id}/${message.channel.name}/${offender.username}`).once('value').then((response) => {
+			db.ref(`offenses/${message.guild.id}/${message.channel.name}/${username}`).once('value').then((response) => {
 		  		response = response.val();
 		  		if(!response) numOffenses = 0;
 		  		else numOffenses = response.numOffenses;
 		  		numOffenses += 1;
 		  		str += "\n" + reprimand(numOffenses, username);
 		    	message.channel.send(str);
-		  		db.ref(`offenses/${message.guild.id}/${message.channel.name}/${offender.username}`).set({numOffenses: numOffenses});
+		  		db.ref(`offenses/${message.guild.id}/${message.channel.name}/${username}`).set({numOffenses: numOffenses});
 		  	})
 		  	.catch((err) => {
 		  		str += "\n" + "Something went wrong when I was thinking of a reply, but I'm very mad at you, " + username + ", regardless"
