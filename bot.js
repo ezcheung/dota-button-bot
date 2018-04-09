@@ -33,6 +33,32 @@ client.on("message", (message) => {
     }
   }
 
+  else if (message.content.startsWith("!!report")) {
+	if(message.author.id==210224301671055360 || message.author.id==210209958808125441) {
+		let msg = message.content;
+		let username = msg.substring(msg.indexOf(' '));
+		let offender = message.members.find('username', username);
+		if(!offender) message.channel.send(`Couldn't find the offender ${username}. Check your spelling and/or formatting`);
+		else if(!offender.id == 430871108716199948) message.channel.send("Haha, very funny. I would never do anything reportable though");
+		else {
+			let str = `BZZZZZZZZ! ${username} mentioned DOTA!`;
+			db.ref(`offenses/${message.guild.id}/${message.channel.name}/${offender.username}`).once('value').then((response) => {
+		  		response = response.val();
+		  		if(!response) numOffenses = 0;
+		  		else numOffenses = response.numOffenses;
+		  		numOffenses += 1;
+		  		str += "\n" + reprimand(numOffenses, username);
+		    	message.channel.send(str);
+		  		db.ref(`offenses/${message.guild.id}/${message.channel.name}/${offender.username}`).set({numOffenses: numOffenses});
+		  	})
+		  	.catch((err) => {
+		  		str += "\n" + "Something went wrong when I was thinking of a reply, but I'm very mad at you, " + username + ", regardless"
+		  		message.channel.send(str);
+		  	})
+		}
+	}
+  }
+
   else if (replaceForDetection(message.content.toLowerCase()).includes("dota") || replaceForDetection(message.content.toLowerCase()).includes("defense of the ancients")) {
   	let user=message.author.username;
   	let str = `BZZZZZZZZ! ${user} mentioned DOTA!`;
@@ -49,6 +75,7 @@ client.on("message", (message) => {
   		str += "\n" + "Something went wrong when I was thinking of a reply, but I'm very mad at you, " + message.author.username + ", regardless"
   		message.channel.send(str);
   	})
+
   }
 });
 
