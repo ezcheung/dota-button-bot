@@ -36,7 +36,11 @@ client.on("message", (message) => {
   else if (message.content.startsWith("!!report")) {
 	if(message.author.id==210224301671055360 || message.author.id==210209958808125441) {
 		let msg = message.content;
-		let username = msg.substring(msg.indexOf(' '));
+		let username = msg.substring(msg.indexOf(' ')+1);
+		if(!username.length){
+			message.channel.send("You gotta give me a username, man");
+			return;
+		}
 		message.channel.send("You reported " + username);
 		let offender = message.guild.members.find('username', username);
 		if(!offender) message.channel.send(`Couldn't find the offender ${username}. Check your spelling and/or formatting`);
