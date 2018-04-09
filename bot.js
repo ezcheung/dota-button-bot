@@ -45,7 +45,7 @@ client.on("message", (message) => {
 			return member.user.username == username;
 		});
 		if(!offender) message.channel.send(`Couldn't find the offender ${username}. Check your spelling and/or formatting`);
-		else if(!offender.user.id == 430871108716199948) message.channel.send("Haha, very funny. I would never do anything reportable though");
+		else if(offender.user.id == 430871108716199948) message.channel.send("Haha, very funny. I would never do anything reportable though");
 		else {
 			let str = `BZZZZZZZZ! ${username} mentioned DOTA!`;
 			db.ref(`offenses/${message.guild.id}/${message.channel.name}/${username}`).once('value').then((response) => {
