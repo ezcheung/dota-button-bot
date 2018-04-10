@@ -106,7 +106,6 @@ function randomElementFromArray(arr) {
 }
 
 function replaceForDetection(str) {
-	str = str.replace(/\W/g, '');
 	let replaceObj = {
 		'4': 'a',
 		'0': 'o',
@@ -114,7 +113,8 @@ function replaceForDetection(str) {
 		'3': 'e',
 		'α': 'a'
 	}
-	return allReplace(str, replaceObj);
+	str = allReplace(str, replaceObj);
+	return str.replace(/\W/g, '');
 }
 
 function allReplace(str, obj) {
