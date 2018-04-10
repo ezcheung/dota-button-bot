@@ -93,7 +93,7 @@ function reprimand(offenses, user) {
 
 	if(offenses <= 1) return responses.firstResponse.replace(userReplace, user).replace(timesReplace, offenses);
 
-	let index = Math.floor((offenses-1) / 5);
+	let index = Math.floor((offenses-1) / 4);
 	index = Math.min(index, responses.responses.length-1);
 
 	let resp = randomElementFromArray(responses.responses[index]);
