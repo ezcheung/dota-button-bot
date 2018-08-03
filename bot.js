@@ -84,7 +84,7 @@ client.on("message", (message) => {
   		str += "\n" + reprimand(numOffenses, user);
     	message.channel.send(str);
     	if(response.lastOffense) {
-    		let interval = Date.now().getTime()-response.lastOffense;
+    		let interval = Date.now()-response.lastOffense;
     		if(interval/1000/60 <= 2) {
     			spamCount += 1;
     			let penaltyRole=message.guild.roles.find("name","Penalty Box")
@@ -102,7 +102,7 @@ client.on("message", (message) => {
   	})
   	.catch((err) => {
   		str += "\n" + "Something went wrong when I was thinking of a reply, but I'm very mad at you, " + message.author.username + ", regardless"
-  		message.channel.send(err);
+  		message.channel.send(str);
   	})
 
   }
