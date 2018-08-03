@@ -102,7 +102,7 @@ client.on("message", (message) => {
   	})
   	.catch((err) => {
   		str += "\n" + "Something went wrong when I was thinking of a reply, but I'm very mad at you, " + message.author.username + ", regardless"
-  		message.channel.send(str);
+  		message.channel.send(err);
   	})
 
   }
