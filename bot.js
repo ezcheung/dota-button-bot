@@ -83,11 +83,12 @@ client.on("message", (message) => {
   		numOffenses += 1;
   		str += "\n" + reprimand(numOffenses, user);
     	message.channel.send(str);
-    	if(response.lastOffense) {
+    	if(response && response.lastOffense) {
     		let interval = Date.now()-response.lastOffense;
     		if(interval/1000/60 <= 2) {
     			spamCount += 1;
     			let penaltyRole=message.guild.roles.find("name","Penalty Box")
+    			message.channel.send(penaltyRole)
     			if(spamCount >= 4 && !message.member.roles.some(r => r.name === penaltyRole.name)) {
     				let offender=message.member;
     				let minutes=2
