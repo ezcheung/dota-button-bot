@@ -34,6 +34,7 @@ client.on("message", (message) => {
   }
 
   else if (message.content.startsWith("!!report")) {
+  	if(offender.user.id == 430871108716199948) message.channel.send("Haha, very funny");
 	if(message.author.id==210224301671055360 || message.author.id==210209958808125441) {
 		let msg = message.content;
 		let username = msg.substring(msg.indexOf(' ')+1);
@@ -45,7 +46,6 @@ client.on("message", (message) => {
 			return member.user.username == username;
 		});
 		if(!offender) message.channel.send(`Couldn't find the offender ${username}. Check your spelling and/or formatting`);
-		else if(offender.user.id == 430871108716199948) message.channel.send("Haha, very funny. I would never do anything reportable though");
 		else {
 			let str = `BZZZZZZZZ! ${username} mentioned DOTA!`;
 			db.ref(`offenses/${message.guild.id}/${message.channel.name}/${username}`).once('value').then((response) => {
@@ -63,7 +63,7 @@ client.on("message", (message) => {
 		  	})
 		}
 	} else {
-		message.channel.send("Nah fam I'm good");
+		message.channel.send("Lol who even is you");
 	}
   }
 
@@ -72,12 +72,33 @@ client.on("message", (message) => {
   	let str = `BZZZZZZZZ! ${user} mentioned DOTA!`;
   	db.ref(`offenses/${message.guild.id}/${message.channel.name}/${user}`).once('value').then((response) => {
   		response = response.val();
-  		if(!response) numOffenses = 0;
-  		else numOffenses = response.numOffenses;
+  		if(!response) {
+  			numOffenses = 0;
+  			spamCount = 0;
+  		}
+  		else {
+  			numOffenses = response.numOffenses || 0;
+  			spamCount = response.spamCount || 0;
+  		}
   		numOffenses += 1;
   		str += "\n" + reprimand(numOffenses, user);
     	message.channel.send(str);
-  		db.ref(`offenses/${message.guild.id}/${message.channel.name}/${user}`).set({numOffenses: numOffenses});
+    	if(response.lastOffense) {
+    		let interval = Date.now().getTime()-response.lastOffense;
+    		if(interval/1000/60 <= 2) {
+    			spamCount += 1;
+    			let penaltyRole=message.guild.roles.find("name","Penalty Box")
+    			if(spamCount >= 4 && !message.member.roles.some(r => r.name === penaltyRole.name)) {
+    				let offender=message.member;
+    				let minutes=2
+    				offender.addRole(penaltyRole);
+    				setTimeout(() => offender.removeRole(penaltyRole),minutes*60000)
+    				message.channel.send(user+" has been put in the penalty box for " + minutes + " minutes.\nPlease don't make me spam the channel, I get very tired of buzzing")
+    			}
+    		}
+    		else spamCount=0;
+    	}
+  		db.ref(`offenses/${message.guild.id}/${message.channel.name}/${user}`).set({numOffenses: numOffenses, lastOffense: Date.now(), spamCount: spamCount});
   	})
   	.catch((err) => {
   		str += "\n" + "Something went wrong when I was thinking of a reply, but I'm very mad at you, " + message.author.username + ", regardless"
