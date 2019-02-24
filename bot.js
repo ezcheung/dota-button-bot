@@ -151,7 +151,7 @@ function censor(str) {
   let censorShips = {
     'fuck': 'stink',
     'dick': 'stinkyhead',
-    'ass' : 'butt',
+    ' ass ' : ' butt ',
     'BITCH': 'SMELLYFACE',
     'shit': 'poopoo',
     'goddamn': 'gosh darn',
