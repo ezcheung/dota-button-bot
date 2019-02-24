@@ -157,7 +157,8 @@ function censor(str) {
     'goddamn': 'gosh darn',
     'GODDAMN': "GOSH DARN",
     'damn': 'darn',
-    'bitch': 'smellyface'
+    'bitch': 'smellyface',
+    'ASS':  'BUTT'
   }
   str = allReplace(str, censorShips);
   return str
