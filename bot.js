@@ -120,7 +120,7 @@ function reprimand(offenses, user) {
 
 	let resp = randomElementFromArray(responses.responses[index]);
 
-	return resp.replace(userReplace, user).replace(timesReplace, offenses);
+	return censor(resp.replace(userReplace, user).replace(timesReplace, offenses));
 }
 
 function randomElementFromArray(arr) {
@@ -146,5 +146,21 @@ function allReplace(str, obj) {
     }
     return retStr;
 };
+
+function censor(str) {
+  let censorShips = {
+    'fuck': 'stink',
+    'dick': 'stinkyhead',
+    'ass' : 'butt',
+    'BITCH': 'smellyface',
+    'shit': 'poopoo',
+    'goddamn': 'gosh darn',
+    'GODDAMN': "GOSH DARN",
+    'damn': 'darn',
+    'bitch': 'smellyface'
+  }
+  str = allReplace(str, replaceObj);
+  return str
+}
 
 client.login(process.env.BOT_TOKEN);
