@@ -159,7 +159,7 @@ function censor(str) {
     'damn': 'darn',
     'bitch': 'smellyface'
   }
-  str = allReplace(str, replaceObj);
+  str = allReplace(str, censorShips);
   return str
 }
 
