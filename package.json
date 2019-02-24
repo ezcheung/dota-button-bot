@@ -13,5 +13,8 @@
   },
   "scripts": {
     "start": "node bot.js"
+  },
+  "engines": {
+    "node": "10.3.0"
   }
 }
