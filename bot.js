@@ -152,7 +152,7 @@ function censor(str) {
     'fuck': 'stink',
     'dick': 'stinkyhead',
     'ass' : 'butt',
-    'BITCH': 'smellyface',
+    'BITCH': 'SMELLYFACE',
     'shit': 'poopoo',
     'goddamn': 'gosh darn',
     'GODDAMN': "GOSH DARN",
