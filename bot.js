@@ -22,7 +22,7 @@ client.on("message", (message) => {
     if (message.member.voiceChannel) {
       message.member.voiceChannel.join()
         .then(connection => {
-          const dispatcher = connection.playFile('./buzzer.mp3');
+          const dispatcher = connection.play('./buzzer.mp3');
           dispatcher.on("end", end => {
           	message.member.voiceChannel.leave();
           })
